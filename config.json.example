@@ -1,0 +1,14 @@
+{
+  "aws": {
+    "credentials": {
+      "key": "",
+      "secret": ""
+    },
+    "bucket": "my-bucket",
+    "file_prefix": "backup"
+  },
+  "filename": "mybackup",
+  "directories": [
+    "/Users/mmmyers/Desktop/nflanalysis"
+  ]
+}
