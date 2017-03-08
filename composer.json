@@ -3,6 +3,7 @@
   "description": "A command line utility for backing up directories and files to AWS S3",
   "keywords": ["s3", "backup", "s3backup", "aws", "AWS S3", "S3"],
   "license": "MIT",
+  "version": "1.1.0",
   "authors": [
     {
       "name": "Mark Myers",
@@ -28,6 +29,6 @@
     ]
   },
   "bin": [
-    "s3"
+    "s3backup"
   ]
 }
