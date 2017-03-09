@@ -9,7 +9,26 @@ Make sure to place the ~/.composer/vendor/bin directory in your PATH so the s3 e
 
 ## Configure
 
-Once installed on your machine it should create the following directory `$HOME/.s3backup` and copy the `config.json.example` to that directory.  Rename the `$HOME/.s3backup/config.json.example` file to `$HOME/.s3backup/config.json`.  Open up the `config.json` file and edit it to your liking, below is an example:
+Once installed on your machine you will need to run `s3backup init` as it should create the following directory `$HOME/.s3backup` and `config.json` file in that directory. Open up the `config.json` file and edit it to your liking, below are a couple examples:
+
+```json
+{
+  "aws": {
+    "credentials": {
+      "key": "<Your AWS Access Key ID>",
+      "secret": "<Your AWS Secret Access Key ID>"
+    },
+    "bucket": "my-backup-bucket",
+    "file_prefix": "my_backups"
+  },
+  "filename": "my_laptop_backup",
+  "directories": [
+    "/Users/exampleUser/Desktop/Logos",
+    "/var/www/html",
+    "/Users/exampleUser/Documents"
+  ]
+}
+```
 
 ```json
 {
@@ -19,13 +38,33 @@ Once installed on your machine it should create the following directory `$HOME/.
       "secret": "<Your AWS Secret Access Key ID>"
     },
     "bucket": "my-bucket",
-    "file_prefix": ""
+    "file_prefix": "my_backups"
   },
   "filename": "my_laptop_backup",
-  "directories": [
-    "/Users/exampleUser/Desktop/Logos",
-    "/var/www/html",
-    "/Users/exampleUser/Documents"
-  ]
+  "directories": []
 }
+```
+
+## Usage
+
+If you don't setup any directories in the config file you can run backup
+any folder you want by running the following:
+
+```
+s3backup backup path/to/file/or/directory
+```
+
+If you have predefined directories in your config file you can simply
+run:
+
+```
+s3backup backup
+```
+
+You can also set an environment variable to only have to run `s3backup`
+like below:
+
+```
+export S3_BACKUP_SINGLE_COMMAND=1
+s3backup
 ```

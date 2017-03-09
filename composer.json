@@ -3,7 +3,7 @@
   "description": "A command line utility for backing up directories and files to AWS S3",
   "keywords": ["s3", "backup", "s3backup", "aws", "AWS S3", "S3"],
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "authors": [
     {
       "name": "Mark Myers",
@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "alchemy/zippy": "0.3.5",
+    "alchemy/zippy": "0.4.8",
     "aws/aws-sdk-php": "3.18.17",
     "comodojo/zip": "2.1.0",
     "symfony/console": "3.1.0",
@@ -21,12 +21,6 @@
     "psr-4": {
       "MarkMyers\\": "src/"
     }
-  },
-  "scripts": {
-    "post-package-install": [
-      "php -r \"file_exists('$HOME/.s3backup') || mkdir('$HOME/.s3backup');\"",
-      "php -r \"file_exists('$HOME/.s3backup/config.json') || copy('config.json.example', '$HOME/.s3backup/config.json.examle');\""
-    ]
   },
   "bin": [
     "s3backup"

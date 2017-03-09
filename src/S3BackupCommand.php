@@ -29,7 +29,7 @@ class S3BackupCommand extends Command
 
   public function execute(InputInterface $input, OutputInterface $output)
   {
-    if(isset($this->config)){
+    if(isset($this->config) && !empty($this->config->directories)){
       $folder = $this->config->directories;
     } else {
       $folder = $input->getArgument('folder');
@@ -41,6 +41,7 @@ class S3BackupCommand extends Command
     }
 
     $this->upload($archName);
+    unlink($archName);
   }
 
   protected function errExit(OutputInterface $output, $errText, $exit_code)

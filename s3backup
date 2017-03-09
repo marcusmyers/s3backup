@@ -12,6 +12,13 @@ require 'vendor/autoload.php';
 $app = new Application('S3 Backup command utility', '1.0');
 
 $command = new MarkMyers\S3BackupCommand();
+$init = new MarkMyers\InitCommand();
+
 $app->add($command);
+$app->add($init);
+
+if ( getenv('S3_BACKUP_SINGLE_COMMAND') !== false) {
+  $app->setDefaultCommand($command->getName(), true);
+}
 
 $app->run();
