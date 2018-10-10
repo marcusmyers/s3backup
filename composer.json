@@ -12,7 +12,7 @@
   ],
   "require": {
     "alchemy/zippy": "0.4.9",
-    "aws/aws-sdk-php": "3.67.21",
+    "aws/aws-sdk-php": "3.69.3",
     "comodojo/zip": "2.1.1",
     "symfony/console": "4.1.4",
     "guzzlehttp/guzzle": "6.2.2"
