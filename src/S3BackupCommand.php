@@ -10,6 +10,7 @@ use Alchemy\Zippy\Zippy;
 use Comodojo\Zip\Zip;
 use Aws\S3\S3Client;
 use Aws\Exception\S3Exception;
+use Tightenco\Collect\Support\Collection;
 
 class S3BackupCommand extends Command
 {
@@ -18,8 +19,7 @@ class S3BackupCommand extends Command
   public function configure()
   {
     if(file_exists(getenv('HOME')."/.s3backup/config.json")){
-      $configFile = file_get_contents(getenv('HOME')."/.s3backup/config.json");
-      $this->config = json_decode($configFile);
+      $this->config = json_decode(file_get_contents(getenv('HOME')."/.s3backup/config.json"));
     }
 
     $this->setName('backup')
@@ -29,6 +29,10 @@ class S3BackupCommand extends Command
 
   public function execute(InputInterface $input, OutputInterface $output)
   {
+    if (! class_exists('ZipArchive')) {
+      throw new RuntimeException('The Zip PHP extension is not installed. Please install it and try again.');
+    }
+
     if(isset($this->config) && !empty($this->config->directories)){
       $folder = $this->config->directories;
     } else {
@@ -96,9 +100,7 @@ class S3BackupCommand extends Command
    */
   private function getDirectoryName($directory)
   {
-    $arrExplode = explode("/", $directory);
-    $name = array_pop($arrExplode);
-    return $name;
+    return collect(explode("/", $directory))->last();
   }
 
   /**
