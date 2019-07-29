@@ -14,7 +14,7 @@
     "alchemy/zippy": "0.4.9",
     "aws/aws-sdk-php": "3.90.1",
     "comodojo/zip": "2.1.1",
-    "symfony/console": "4.2.4",
+    "symfony/console": "4.3.3",
     "guzzlehttp/guzzle": "6.2.2",
     "tightenco/collect": "^5.7"
   },
