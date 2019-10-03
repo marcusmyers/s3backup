@@ -16,7 +16,7 @@
     "comodojo/zip": "2.1.1",
     "symfony/console": "4.2.4",
     "guzzlehttp/guzzle": "6.2.2",
-    "tightenco/collect": "^5.7"
+    "tightenco/collect": "^6.1"
   },
   "autoload": {
     "psr-4": {
