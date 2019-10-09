@@ -15,7 +15,7 @@
     "aws/aws-sdk-php": "3.112.17",
     "comodojo/zip": "2.1.1",
     "symfony/console": "4.2.4",
-    "guzzlehttp/guzzle": "6.2.2",
+    "guzzlehttp/guzzle": "6.3.3",
     "tightenco/collect": "^5.7"
   },
   "autoload": {
