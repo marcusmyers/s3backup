@@ -1,15 +1,21 @@
 # S3 Backup
 
-The `s3backup` cli tool uses a configuration file to setup and backup directories on your computer to S3.
+The `s3backup` cli tool uses a configuration file to setup and backup
+directories on your computer to S3.
 
 ## Install
 `composer global require "marcusmyers/s3backup=~2.0.0"`
 
-Make sure to place the ~/.composer/vendor/bin directory in your PATH so the s3 executable is found when you run the `s3backup backup` command in your terminal.
+Make sure to place the ~/.composer/vendor/bin directory in your PATH so
+the s3 executable is found when you run the `s3backup backup` command in
+your terminal.
 
 ## Configure
 
-Once installed on your machine you will need to run `s3backup init` as it should create the following directory `$HOME/.s3backup` and `config.json` file in that directory. Open up the `config.json` file and edit it to your liking, below are a couple examples:
+Once installed on your machine you will need to run `s3backup init` as
+it should create the following directory `$HOME/.s3backup` and
+`config.json` file in that directory. Open up the `config.json` file and
+edit it to your liking, below are a couple examples:
 
 ```json
 {
