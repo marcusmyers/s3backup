@@ -1,0 +1,18 @@
+on: push
+name: Run phpunit testsuite
+jobs:
+  phpunit-test-suite:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+    - name: Install composer dependencies
+      run: |
+        composer install --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+    - name: Run Testsuite
+      run: vendor/bin/phpunit
