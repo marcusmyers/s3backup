@@ -9,7 +9,6 @@ class InitCommandTest extends TestCase
     public function tearDown() : void
     {
         unlink('./tests/fixtures/.s3backup/config.json');
-        rmdir('./tests/fixtures/.s3backup');
     }
     /**
      * A basic test example.
