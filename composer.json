@@ -20,7 +20,7 @@
         "aws/aws-sdk-php": "^3.112",
         "laravel-zero/framework": "^6.0",
         "league/pipeline": "^1.0",
-        "marcusmyers/laravel-github-actions": "^1.0",
+        "marcusmyers/laravel-github-actions": "^2.0",
         "zanysoft/laravel-zip": "^1.0"
     },
     "require-dev": {
